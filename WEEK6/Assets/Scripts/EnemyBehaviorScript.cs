@@ -25,10 +25,53 @@ public class EnemyBehaviorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Calculate direction vector based on spawn point angle
-        Vector2 direction = Quaternion.Euler(0, 0, transform.eulerAngles.z) * Vector2.down;
-        rb.velocity = direction * speed;
+        Vector2 direction = Vector2.down;
+
+        float angle = Random.Range(-45f, 45f);
+      
+        direction = Quaternion.Euler(0, 0, angle) * direction;
+
+        float randomSpeed = Random.Range(0.5f, 1.5f) * speed;
+
+ 
+        Vector2 perpendicular = new Vector2(-direction.y, direction.x);
+        float randomForce = Random.Range(-1f, 1f) * randomSpeed;
+        Vector2 forceVector = perpendicular * randomForce;
+        rb.AddForce(forceVector);
+
+
+        rb.velocity = direction.normalized * randomSpeed;
     }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Border"))
+        {
+            Debug.Log("Border collision detected");
+            // Change the direction of the enemy here
+            Vector2 direction = Vector2.down;
+
+            float angle = Random.Range(-45f, 45f);
+
+            direction = Quaternion.Euler(0, 0, angle) * direction;
+
+            float randomSpeed = Random.Range(0.5f, 1.5f) * speed;
+
+            Vector2 perpendicular = new Vector2(-direction.y, direction.x);
+            float randomForce = Random.Range(-1f, 1f) * randomSpeed;
+            Vector2 forceVector = perpendicular * randomForce;
+            rb.AddForce(forceVector);
+
+            rb.velocity = direction.normalized * randomSpeed;
+        }
+    }
+
+
+
 
     void OnBecameInvisible()
     {
