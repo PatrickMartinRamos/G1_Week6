@@ -8,21 +8,25 @@ public class EnemySpawnScript : MonoBehaviour
     public Transform spawnPoint;
     public float spawninterval;
     public float startSpawn;
+    public float cooldownTimer; // new public variable for cooldown timer
 
     private static int enemies;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (spawninterval <= 0)
         {
-            Instantiate(enemySpawn, spawnPoint.position, spawnPoint.rotation);
-            spawninterval = startSpawn;
+            if (enemies < 5)
+            {
+                Instantiate(enemySpawn, spawnPoint.position, spawnPoint.rotation);
+                spawninterval = startSpawn;
+                enemies++;
+            }
+            else
+            {
+                spawninterval = cooldownTimer; // set cooldown timer to public variable
+                enemies = 0;
+            }
         }
         else
         {
