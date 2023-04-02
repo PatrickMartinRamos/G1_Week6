@@ -7,6 +7,7 @@ public class EnemyBehaviorScript : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     public int health = 100;
+    public GameObject deathEffect;
 
     public void TakeDamage(int damage)
     {
@@ -18,6 +19,7 @@ public class EnemyBehaviorScript : MonoBehaviour
     }
     private void Destroy()
     {
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     // Start is called before the first frame update

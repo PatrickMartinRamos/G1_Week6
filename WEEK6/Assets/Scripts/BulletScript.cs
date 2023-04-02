@@ -22,9 +22,11 @@ public class BulletScript : MonoBehaviour
     {
         EnemyBehaviorScript enemy = collision.GetComponent<EnemyBehaviorScript>();
 
-        if(enemy != null)
+        if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            Destroy(gameObject);
         }
+
     }
 }

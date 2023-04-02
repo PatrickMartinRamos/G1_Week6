@@ -4,33 +4,23 @@ using UnityEngine;
 
 public class EnemySpawnScript : MonoBehaviour
 {
-    public GameObject enemySpawn;
-    public Transform spawnPoint;
-    public float spawninterval;
-    public float startSpawn;
-    public float cooldownTimer; // new public variable for cooldown timer
+    public Transform[] spawnPoints;
+    public GameObject[] enemyPrefabs;
+    public float spawnInterval = 1.0f; // Set in Inspector
 
-    private static int enemies;
-
-    void Update()
+    void Start()
     {
-        if (spawninterval <= 0)
+        StartCoroutine(SpawnEnemies());
+    }
+
+    IEnumerator SpawnEnemies()
+    {
+        while (true)
         {
-            if (enemies < 5)
-            {
-                Instantiate(enemySpawn, spawnPoint.position, spawnPoint.rotation);
-                spawninterval = startSpawn;
-                enemies++;
-            }
-            else
-            {
-                spawninterval = cooldownTimer; // set cooldown timer to public variable
-                enemies = 0;
-            }
-        }
-        else
-        {
-            spawninterval -= Time.deltaTime;
+            int randEnemy = Random.Range(0, enemyPrefabs.Length);
+            int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+            Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, Quaternion.identity);
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 }
