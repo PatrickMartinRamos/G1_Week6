@@ -24,6 +24,6 @@ public class PlayerScript : MonoBehaviour
 
         transform.Translate(direction);
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -10, 10f), Mathf.Clamp(transform.position.y, -8f, 2f), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -10f, 9f), Mathf.Clamp(transform.position.y, -8f, 2f), transform.position.z);
     }
 }
