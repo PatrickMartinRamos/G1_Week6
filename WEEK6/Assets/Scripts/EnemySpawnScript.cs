@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawnScript : MonoBehaviour
 {
+
     public GameObject enemySpawn;
     public Transform spawnPoint;
     public float spawninterval;
@@ -11,6 +12,8 @@ public class EnemySpawnScript : MonoBehaviour
     public float cooldownTimer; // new public variable for cooldown timer
 
     private static int enemies;
+
+
 
     void Update()
     {

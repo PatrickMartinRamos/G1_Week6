@@ -6,13 +6,30 @@ public class EnemyBehaviorScript : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb;
+    public int health = 100;
     //public GameObject impactEffect;
 
-    // Start is called before the first frame update
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            Destroy();
+        }
+    }
+
+    void Destroy()
+    {
+        Destroy(gameObject);     
+    }
+
     void Start()
     {
-        rb.velocity = Vector2.down * speed;
+        // Calculate direction vector based on spawn point angle
+        Vector2 direction = Quaternion.Euler(0, 0, transform.eulerAngles.z) * Vector2.down;
+        rb.velocity = direction * speed;
     }
+
     void OnBecameInvisible()
     {
         Destroy(gameObject);
