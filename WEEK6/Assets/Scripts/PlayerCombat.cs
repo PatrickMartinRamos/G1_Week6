@@ -15,6 +15,10 @@ public class PlayerCombat : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
 
+    private void Start()
+    {
+      
+    }
     public void AddScore(int Score)
     {
         score += Score;
@@ -24,7 +28,8 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Shootinginterval <= 0)
+        scoreText.text = "Score: " + score;
+        if (Shootinginterval <= 0)
         {
             Instantiate(bulletprefab, FirePoint_2.position, FirePoint_2.rotation);
             Shootinginterval = startTimeshots;
@@ -34,6 +39,6 @@ public class PlayerCombat : MonoBehaviour
             Shootinginterval -= Time.deltaTime;
         }
 
-        scoreText.text = "Score: " + score;
+        
     }
 }

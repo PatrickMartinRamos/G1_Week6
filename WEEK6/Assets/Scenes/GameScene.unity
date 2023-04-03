@@ -510,7 +510,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236629439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 7.71, z: 28.31}
+  m_LocalPosition: {x: -0.25, y: 8, z: 28.31}
   m_LocalScale: {x: 0.9625, y: 1, z: 1}
   m_Children:
   - {fileID: 1642222232}
@@ -566,7 +566,7 @@ MonoBehaviour:
   FirePoint_2: {fileID: 1042193840}
   bulletprefab: {fileID: 3389979498676186359, guid: 0e90bc440220b2d4ab0d7a5469daa346, type: 3}
   Shootinginterval: 0
-  startTimeshots: 0.2
+  startTimeshots: 0.15
   score: 0
   scoreText: {fileID: 1324941049}
 --- !u!114 &248850200
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  health: 5
+  health: 6
   deathEffect: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
   shipHealthtext: {fileID: 223458882}
 --- !u!61 &248850201
@@ -664,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278674211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2, y: -0.0077, z: 0}
+  m_LocalPosition: {x: 2.226628, y: -0.0077, z: 0}
   m_LocalScale: {x: 0.81977314, y: 6.2148795, z: 1}
   m_Children: []
   m_Father: {fileID: 983405352}
@@ -795,7 +795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378837921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3116647, y: 9.381587, z: -2.26}
+  m_LocalPosition: {x: -1.6526647, y: 10.431587, z: -2.26}
   m_LocalScale: {x: 21.168795, y: 1.1723568, z: 1}
   m_Children: []
   m_Father: {fileID: 677568781}
@@ -1148,7 +1148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664870498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.248544, y: -0.1194, z: 0}
+  m_LocalPosition: {x: -2.248414, y: -0.1194, z: 0}
   m_LocalScale: {x: 0.9014, y: 6.551915, z: 1}
   m_Children: []
   m_Father: {fileID: 1493178136}
@@ -1239,14 +1239,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664870498}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1679,7 +1679,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SCORE:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 13034f0a36f177b4883a056835191432, type: 2}
   m_sharedMaterial: {fileID: -8884283358550822649, guid: 13034f0a36f177b4883a056835191432, type: 2}
@@ -2029,8 +2029,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531709351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3116647, y: -10.63, z: 26.12}
-  m_LocalScale: {x: 21.168795, y: 1.1723568, z: 1}
+  m_LocalPosition: {x: -1.7429, y: -9.97, z: 26.12}
+  m_LocalScale: {x: 20.653763, y: 1.1723568, z: 1}
   m_Children: []
   m_Father: {fileID: 677568781}
   m_RootOrder: 1
@@ -2048,7 +2048,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.008829758, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2059,7 +2059,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.98234046, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &1531709354
 Rigidbody2D:
@@ -2172,7 +2172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4516860231943414, guid: 1a09f406e15243042af8595d756fcfe9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.51
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4516860231943414, guid: 1a09f406e15243042af8595d756fcfe9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2299,7 +2299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HEALTH:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 13034f0a36f177b4883a056835191432, type: 2}
   m_sharedMaterial: {fileID: -8884283358550822649, guid: 13034f0a36f177b4883a056835191432, type: 2}

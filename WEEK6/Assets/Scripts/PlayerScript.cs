@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-       
+     
     }
     // Update is called once per frame
     void Update()
@@ -21,14 +21,14 @@ public class PlayerScript : MonoBehaviour
         Vector3 direction = new Vector3(inputhorizontal, inputvertical, 0) * speed * Time.deltaTime;
 
         transform.Translate(direction);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9f, 9f), Mathf.Clamp(transform.position.y, -8f, -1f), transform.position.z);
-       
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9.5f, 9.5f), Mathf.Clamp(transform.position.y, -8f, -1f), transform.position.z);
+        shipHealthtext.text = "Health: " + health.ToString();
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-        shipHealthtext.text = "Health: " + health.ToString();
+   
         if (health <= 0)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);

@@ -34,5 +34,11 @@ public class BulletScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        EnemyType2 enemytype2 = collision.GetComponent<EnemyType2>();
+        if (enemytype2 != null)
+        {
+            enemytype2.TakeDamages(damage);
+            Destroy(gameObject);
+        }
     }
 }

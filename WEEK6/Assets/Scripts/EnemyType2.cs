@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviorScript : MonoBehaviour
+public class EnemyType2 : MonoBehaviour
 {
     public float speed;  // The speed of the enemy
     public Rigidbody2D rb;  // The Rigidbody2D component attached to the enemy
@@ -36,9 +36,9 @@ public class EnemyBehaviorScript : MonoBehaviour
     // This method is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerCombat>(); 
+        player = FindObjectOfType<PlayerCombat>();
 
-        
+
         StartCoroutine(RandomizeMovement());  // Start the coroutine that randomizes the enemy's movement
     }
 
@@ -111,5 +111,3 @@ public class EnemyBehaviorScript : MonoBehaviour
         Destroy(gameObject);
     }
 }
-
-
