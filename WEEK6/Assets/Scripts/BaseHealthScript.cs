@@ -8,7 +8,7 @@ public class BaseHealthScript : MonoBehaviour
     public int health;
     public TextMeshProUGUI healthText;
 
-    private void Update()
+    void Update()
     {
         healthText.text = "Health: " + health.ToString();
     }

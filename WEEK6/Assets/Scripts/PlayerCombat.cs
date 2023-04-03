@@ -18,7 +18,7 @@ public class PlayerCombat : MonoBehaviour
     public void AddScore(int Score)
     {
         score += Score;
-        scoreText.text = "Score: " + score;
+      
     }
 
     // Update is called once per frame
@@ -34,6 +34,6 @@ public class PlayerCombat : MonoBehaviour
             Shootinginterval -= Time.deltaTime;
         }
 
-
+        scoreText.text = "Score: " + score;
     }
 }
