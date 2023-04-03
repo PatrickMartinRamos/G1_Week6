@@ -81,7 +81,7 @@ public class EnemyBehaviorScript : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+        
     }
 
     void OnBecameInvisible()

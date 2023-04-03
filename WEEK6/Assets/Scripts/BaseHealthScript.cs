@@ -1,17 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BaseHealthScript : MonoBehaviour
 {
-    public int health = 2;
+    public int health;
+    public TextMeshProUGUI healthText;
 
-    public void baseDamage(int baseDamage)
+    private void Update()
     {
-        health -= baseDamage;
+        healthText.text = "Health: " + health.ToString();
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            BaseHealth(1); // Deduct one health from BorderScript
+        }
+    }
+
+    public void BaseHealth(int damage)
+    {
+        health -= damage;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Debug.Log("Destroy");
+            // Instantiate(deathEffect, transform.position, Quaternion.identity);
+            // Destroy(gameObject);
         }
+ 
     }
 }
