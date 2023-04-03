@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6027187668490416229
+--- !u!1 &6585903869074832592
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6027187668490416224}
-  - component: {fileID: 6027187668490416227}
-  - component: {fileID: 6027187668490416226}
-  - component: {fileID: 61538964221618586}
-  - component: {fileID: 2236673925097025979}
-  - component: {fileID: 5389950447149861157}
+  - component: {fileID: 4083026241205630449}
+  - component: {fileID: 3033713712101023536}
+  - component: {fileID: 2471653285033133191}
+  - component: {fileID: 5728427386488943496}
+  - component: {fileID: 6617436277892965097}
+  - component: {fileID: 5470446922487245803}
   m_Layer: 0
   m_Name: Enemy_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6027187668490416224
+--- !u!4 &4083026241205630449
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027187668490416229}
+  m_GameObject: {fileID: 6585903869074832592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.2961, y: -1.6977, z: 0}
   m_LocalScale: {x: 0.4304087, y: 0.33690554, z: 1}
@@ -35,13 +35,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6027187668490416227
+--- !u!212 &3033713712101023536
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027187668490416229}
+  m_GameObject: {fileID: 6585903869074832592}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -86,14 +86,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6027187668490416226
+--- !u!95 &2471653285033133191
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027187668490416229}
+  m_GameObject: {fileID: 6585903869074832592}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2b2ccacd92579be4087543dafb8fe699, type: 2}
@@ -105,30 +105,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &61538964221618586
+--- !u!114 &5728427386488943496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027187668490416229}
+  m_GameObject: {fileID: 6585903869074832592}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a8b00a0ce63ea743b4100fd09cc7700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  rb: {fileID: 2236673925097025979}
+  rb: {fileID: 6617436277892965097}
   health: 100
   deathEffect: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
---- !u!50 &2236673925097025979
+--- !u!50 &6617436277892965097
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027187668490416229}
+  m_GameObject: {fileID: 6585903869074832592}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -140,15 +140,15 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &5389950447149861157
+--- !u!61 &5470446922487245803
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027187668490416229}
+  m_GameObject: {fileID: 6585903869074832592}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}

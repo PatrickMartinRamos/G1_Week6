@@ -8,6 +8,7 @@ public class EnemyBehaviorScript : MonoBehaviour
     public Rigidbody2D rb;
     public int health = 100;
     public GameObject deathEffect;
+    public PlayerCombat player;
 
     public void TakeDamage(int damage)
     {
@@ -21,10 +22,17 @@ public class EnemyBehaviorScript : MonoBehaviour
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        if (player != null)
+        {
+            player.AddScore(2);
+        }
+
     }
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerCombat>();
+
         Vector2 direction = Vector2.down;
 
         float angle = Random.Range(-45f, 45f);
@@ -42,17 +50,11 @@ public class EnemyBehaviorScript : MonoBehaviour
 
         rb.velocity = direction.normalized * randomSpeed;
     }
-    void OnCollisionEnter2D(Collision2D other)
-    {
-
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Border"))
         {
-            Debug.Log("Border collision detected");
-            // Change the direction of the enemy here
             Vector2 direction = Vector2.down;
 
             float angle = Random.Range(-45f, 45f);
@@ -69,9 +71,6 @@ public class EnemyBehaviorScript : MonoBehaviour
             rb.velocity = direction.normalized * randomSpeed;
         }
     }
-
-
-
 
     void OnBecameInvisible()
     {

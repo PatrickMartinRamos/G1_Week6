@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using TMPro;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public class PlayerCombat : MonoBehaviour
     // Start is called before the first frame update
     public float Shootinginterval;
     public float startTimeshots;
+    public int score = 0;
+    public TextMeshProUGUI scoreText;
+
+
+    public void AddScore(int Score)
+    {
+        score += Score;
+        scoreText.text = "Score: " + score;
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,5 +36,7 @@ public class PlayerCombat : MonoBehaviour
         {
             Shootinginterval -= Time.deltaTime;
         }
+
+
     }
 }

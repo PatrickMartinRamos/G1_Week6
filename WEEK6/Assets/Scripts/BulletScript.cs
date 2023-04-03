@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class BulletScript : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb;
     public int damage;
+
     //public GameObject impactEffect;
 
     // Start is called before the first frame update
@@ -27,6 +27,5 @@ public class BulletScript : MonoBehaviour
             enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
-
     }
 }
