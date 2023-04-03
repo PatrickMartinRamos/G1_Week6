@@ -10,8 +10,10 @@ public class EnemyBehaviorScript : MonoBehaviour
     public GameObject deathEffect;
     private PlayerCombat player;
     public int damage;
+    public int playerDamage;
+  
 
-    public void TakeDamage(int damage)
+    public void TakeDamages(int damage)
     {
         health -= damage;
         if(health <= 0)
@@ -70,16 +72,16 @@ public class EnemyBehaviorScript : MonoBehaviour
             rb.AddForce(forceVector);
 
             rb.velocity = direction.normalized * randomSpeed;
-
-           
-     
         }
-        PlayerScript enemy = other.GetComponent<PlayerScript>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
+
+        PlayerScript player = other.GetComponent<PlayerScript>();
+        if (player != null)
+        {   
+            player.TakeDamage(damage);
             Destroy(gameObject);
         }
+
+
     }
 
     void OnBecameInvisible()

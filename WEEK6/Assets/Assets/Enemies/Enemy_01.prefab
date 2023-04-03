@@ -122,6 +122,7 @@ MonoBehaviour:
   health: 100
   deathEffect: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
   damage: 1
+  playerDamage: 0
 --- !u!50 &6617436277892965097
 Rigidbody2D:
   serializedVersion: 4
