@@ -8,7 +8,8 @@ public class EnemyBehaviorScript : MonoBehaviour
     public Rigidbody2D rb;
     public int health = 100;
     public GameObject deathEffect;
-    public PlayerCombat player;
+    private PlayerCombat player;
+    public int damage;
 
     public void TakeDamage(int damage)
     {
@@ -39,7 +40,7 @@ public class EnemyBehaviorScript : MonoBehaviour
       
         direction = Quaternion.Euler(0, 0, angle) * direction;
 
-        float randomSpeed = Random.Range(0.5f, 1.5f) * speed;
+        float randomSpeed = Random.Range(0.2f, 3f) * speed;
 
  
         Vector2 perpendicular = new Vector2(-direction.y, direction.x);
@@ -61,7 +62,7 @@ public class EnemyBehaviorScript : MonoBehaviour
 
             direction = Quaternion.Euler(0, 0, angle) * direction;
 
-            float randomSpeed = Random.Range(0.5f, 1.5f) * speed;
+            float randomSpeed = Random.Range(0.5f, 1f) * speed;
 
             Vector2 perpendicular = new Vector2(-direction.y, direction.x);
             float randomForce = Random.Range(-1f, 1f) * randomSpeed;
@@ -69,6 +70,15 @@ public class EnemyBehaviorScript : MonoBehaviour
             rb.AddForce(forceVector);
 
             rb.velocity = direction.normalized * randomSpeed;
+
+           
+     
+        }
+        PlayerScript enemy = other.GetComponent<PlayerScript>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 

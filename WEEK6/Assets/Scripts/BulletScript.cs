@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -25,6 +27,11 @@ public class BulletScript : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
+        if(collision.CompareTag("Border"))
+        {
             Destroy(gameObject);
         }
     }
