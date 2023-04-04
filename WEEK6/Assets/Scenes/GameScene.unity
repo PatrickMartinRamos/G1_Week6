@@ -540,7 +540,8 @@ MonoBehaviour:
   - {fileID: 1911619615}
   enemyPrefabs:
   - {fileID: 6585903869074832592, guid: 04c72f5fac8b1444796b167a821eff8a, type: 3}
-  spawnInterval: 4
+  - {fileID: 8539091979799596029, guid: 78d87242eace385499d2cf6983611d2c, type: 3}
+  spawnInterval: 3
 --- !u!1 &248850197 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1558453681934022, guid: 1a09f406e15243042af8595d756fcfe9, type: 3}

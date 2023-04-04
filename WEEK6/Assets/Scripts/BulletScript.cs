@@ -46,5 +46,14 @@ public class BulletScript : MonoBehaviour
             enemytype2.TakeDamages(damage);  // Call the TakeDamages function of the enemy to deal damage to it
             Destroy(gameObject);  // Destroy the bullet game object
         }
+
+        // Check if the object the bullet collided with has an EnemyType3 component attached to it
+        EnemyType3 enemytype3 = collision.GetComponent<EnemyType3>();
+
+        if (enemytype3 != null)
+        {
+            enemytype3.TakeDamages(damage);  // Call the TakeDamages function of the enemy to deal damage to it
+            Destroy(gameObject);  // Destroy the bullet game object
+        }
     }
 }
