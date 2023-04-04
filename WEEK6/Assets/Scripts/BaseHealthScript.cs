@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class BaseHealthScript : MonoBehaviour
 {
-    public int health;
+    public int health; //base health
     public TextMeshProUGUI healthText;
 
     void Update()
-    {
+    {   
+        //display remaining health in the gamescene UI
         healthText.text = "Health: " + health.ToString();
     }
 
@@ -27,8 +28,7 @@ public class BaseHealthScript : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Destroy");
-            // Instantiate(deathEffect, transform.position, Quaternion.identity);
-            // Destroy(gameObject);
+            //add script to load restarat Scene
         }
  
     }

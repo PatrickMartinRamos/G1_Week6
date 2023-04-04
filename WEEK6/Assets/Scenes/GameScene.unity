@@ -541,6 +541,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 6585903869074832592, guid: 04c72f5fac8b1444796b167a821eff8a, type: 3}
   - {fileID: 8539091979799596029, guid: 78d87242eace385499d2cf6983611d2c, type: 3}
+  - {fileID: 3623841812210419903, guid: a5651cd43d8c16f45a215ca4f2ad7daa, type: 3}
   spawnInterval: 3
 --- !u!1 &248850197 stripped
 GameObject:
@@ -2173,7 +2174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4516860231943414, guid: 1a09f406e15243042af8595d756fcfe9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4516860231943414, guid: 1a09f406e15243042af8595d756fcfe9, type: 3}
       propertyPath: m_LocalPosition.y

@@ -10,17 +10,17 @@ public class EnemySpawnScript : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnEnemies());     // start the SpawnEnemies coroutine when the game starts
     }
 
     IEnumerator SpawnEnemies()
     {
         while (true)
         {
-            int randEnemy = Random.Range(0, enemyPrefabs.Length);
-            int randSpawnPoint = Random.Range(0, spawnPoints.Length);
-            Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, Quaternion.identity);
-            yield return new WaitForSeconds(spawnInterval);
+            int randEnemy = Random.Range(0, enemyPrefabs.Length);          // choose a random enemy prefab from the enemyPrefabs array
+            int randSpawnPoint = Random.Range(0, spawnPoints.Length);      // choose a random spawn point from the spawnPoints array
+            Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, Quaternion.identity);   // spawn an enemy at the chosen spawn point with a random enemy prefab
+            yield return new WaitForSeconds(spawnInterval);               // wait for the specified spawn interval before spawning another enemy
         }
-    }
+    }   
 }

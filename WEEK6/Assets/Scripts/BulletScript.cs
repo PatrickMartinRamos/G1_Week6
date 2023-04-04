@@ -4,29 +4,22 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float speed;  // The speed of the bullet
-    public Rigidbody2D rb;  // The Rigidbody2D component attached to the bullet
-    public int damage;  // The amount of damage the bullet deals
+    public float speed;
+    public Rigidbody2D rb; 
+    public int damage;  
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        rb.velocity = transform.up * speed;  // Set the velocity of the bullet to its transform's up direction multiplied by the speed
+        //bullet speed
+        rb.velocity = transform.up * speed;  
     }
 
-    // This function is called when the object becomes invisible
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);  // Destroy the game object when it becomes invisible
-    }
-
-    // This function is called when the object collides with another object with a trigger collider
     public void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the object the bullet collided with has an EnemyBehaviorScript component attached to it
         EnemyBehaviorScript enemy = collision.GetComponent<EnemyBehaviorScript>();
 
-        // Check if the object the bullet collided with has a "Border" tag
         if (collision.CompareTag("Border"))
         {
             Destroy(gameObject);  // Destroy the bullet game object
@@ -34,8 +27,9 @@ public class BulletScript : MonoBehaviour
 
         if (enemy != null)
         {
-            enemy.TakeDamages(damage);  // Call the TakeDamages function of the enemy to deal damage to it
-            Destroy(gameObject);  // Destroy the bullet game object
+            // Call the TakeDamages function of the enemy to deal damage to it
+            enemy.TakeDamages(damage);  
+            Destroy(gameObject);
         }
 
         // Check if the object the bullet collided with has an EnemyType2 component attached to it
@@ -44,7 +38,7 @@ public class BulletScript : MonoBehaviour
         if (enemytype2 != null)
         {
             enemytype2.TakeDamages(damage);  // Call the TakeDamages function of the enemy to deal damage to it
-            Destroy(gameObject);  // Destroy the bullet game object
+            Destroy(gameObject);
         }
 
         // Check if the object the bullet collided with has an EnemyType3 component attached to it
@@ -53,7 +47,7 @@ public class BulletScript : MonoBehaviour
         if (enemytype3 != null)
         {
             enemytype3.TakeDamages(damage);  // Call the TakeDamages function of the enemy to deal damage to it
-            Destroy(gameObject);  // Destroy the bullet game object
+            Destroy(gameObject);
         }
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyType2 : MonoBehaviour
 {
-    public float speed;  // The speed of the enemy
-    public Rigidbody2D rb;  // The Rigidbody2D component attached to the enemy
-    public int health = 100;  // The starting health of the enemy
-    public GameObject deathEffect;  // The particle effect that plays when the enemy is destroyed
-    private PlayerCombat player;  // A reference to the player's combat script
-    public int damage;  // The amount of damage the enemy deals to the player
+    public float speed;  
+    public Rigidbody2D rb;  
+    public int health = 100; 
+    public GameObject deathEffect; 
+    private PlayerCombat player;  
+    public int damage;  
 
 
     // This method is called when the enemy takes damage
