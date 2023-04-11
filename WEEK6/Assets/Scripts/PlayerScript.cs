@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class PlayerScript : MonoBehaviour
     public int health;
     public GameObject deathEffect;
     public TextMeshProUGUI shipHealthtext;
+
+    public float timer;
+    private bool starttimer = false;
 
     void Start()
     {
