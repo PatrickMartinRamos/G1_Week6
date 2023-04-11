@@ -9,7 +9,8 @@ public class EnemyType2 : MonoBehaviour
     public int health = 100; 
     public GameObject deathEffect; 
     private PlayerCombat player;  
-    public int damage;  
+    public int damage;
+    public GameObject powerUpPrefab;
 
 
     // This method is called when the enemy takes damage
@@ -25,6 +26,12 @@ public class EnemyType2 : MonoBehaviour
     // This method is called when the enemy is destroyed
     private void Destroy()
     {
+        // Random chance for powerup to drop
+        if (Random.Range(0f, 1) < 0.3f) // 30% chance for powerup to drop
+        {
+            Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+        }
+
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
         if (player != null)

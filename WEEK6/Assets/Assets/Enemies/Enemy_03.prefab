@@ -123,6 +123,7 @@ MonoBehaviour:
   health: 400
   deathEffect: {fileID: 6540807754145605423, guid: d0aa9aab1ec3e6546a95fa5df06c260f, type: 3}
   damage: 1
+  powerUpPrefab: {fileID: 768223229505444304, guid: 5f6da027ca52284438f2b1a6f2b8f42c, type: 3}
 --- !u!61 &1720259857951494035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,7 +170,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7055029820513515271
 BoxCollider2D:
   m_ObjectHideFlags: 0
