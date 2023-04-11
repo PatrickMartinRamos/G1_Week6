@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Border
   - Health_Border
+  - PowerUP
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New 1
+    uniqueID: 128230397
     locked: 0

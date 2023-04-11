@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BaseHealthScript : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class BaseHealthScript : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Destroy");
-            //add script to load restarat Scene
+            SceneManager.LoadScene(3);
         }
  
     }

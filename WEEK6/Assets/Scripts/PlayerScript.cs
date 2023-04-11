@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour
         Vector3 direction = new Vector3(inputhorizontal, inputvertical, 0) * speed * Time.deltaTime;
 
         transform.Translate(direction);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9.5f, 9.5f), Mathf.Clamp(transform.position.y, -8f, -1f), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -7f, 7f), Mathf.Clamp(transform.position.y, -8f, -1f), transform.position.z);
         shipHealthtext.text = "Health: " + health.ToString();
     }
 
