@@ -13,6 +13,10 @@ public class PowerUPScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (other.CompareTag("Health_Border"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
