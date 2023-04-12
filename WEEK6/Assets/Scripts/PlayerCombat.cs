@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -14,15 +15,32 @@ public class PlayerCombat : MonoBehaviour
     private float powerUpTimeLeft = 0f;
     private bool usingPowerUP = false;
 
+    public float ScoreIncrease = 1f;
 
-    private void Start()
+
+    public void AddScore(int scoreAmount)
     {
-
+        StartCoroutine(IncrementScore(scoreAmount));
     }
 
-    public void AddScore(int Score)
+    public IEnumerator IncrementScore(int scoreAmount)
     {
-        score += Score;
+        float elapsedTime = 0f;
+        int startingScore = score;
+        int targetScore = startingScore + scoreAmount;
+
+        while (elapsedTime < ScoreIncrease)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / ScoreIncrease);
+            int newScore = Mathf.RoundToInt(Mathf.Lerp(startingScore, targetScore, t));
+            scoreText.text = "Score: " + newScore;
+            yield return null;
+        }
+
+        score += scoreAmount;
+        scoreText.text = "Score: " + score.ToString();
+        PlayerPrefs.SetInt("LastScore", score);
     }
 
     // Update is called once per frame

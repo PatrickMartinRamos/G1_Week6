@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -9,8 +11,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject deathEffect;
     public TextMeshProUGUI shipHealthtext;
 
-    public float timer;
-    private bool starttimer = false;
+
 
     void Start()
     {
@@ -19,6 +20,9 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+
+
         float inputhorizontal = Input.GetAxisRaw("Horizontal");
         float inputvertical = Input.GetAxisRaw("Vertical");
 
@@ -37,6 +41,8 @@ public class PlayerScript : MonoBehaviour
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+
+            SceneManager.LoadScene(3);
         }
     }
 }
