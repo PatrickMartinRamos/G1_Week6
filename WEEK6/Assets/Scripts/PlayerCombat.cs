@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
+
 public class PlayerCombat : MonoBehaviour
 {
     public Transform FirePoint_2;
@@ -16,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
     private bool usingPowerUP = false;
 
     public float ScoreIncrease = 1f;
+
 
 
     public void AddScore(int scoreAmount)
@@ -72,6 +74,7 @@ public class PlayerCombat : MonoBehaviour
         {
             Shootinginterval -= Time.deltaTime;
         }
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)

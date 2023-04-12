@@ -2,25 +2,25 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class PlayerScript : MonoBehaviour
 {
     public float speed = 15f;
-    public int health;
+    public float health;
+    public float maxHealth;
     public GameObject deathEffect;
     public TextMeshProUGUI shipHealthtext;
-
+    public Image healthBar;
 
 
     void Start()
     {
-     
+        health = maxHealth;
     }
     // Update is called once per frame
     void Update()
     {
-       
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
 
 
         float inputhorizontal = Input.GetAxisRaw("Horizontal");
@@ -30,7 +30,7 @@ public class PlayerScript : MonoBehaviour
 
         transform.Translate(direction);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -7f, 7f), Mathf.Clamp(transform.position.y, -8f, -1f), transform.position.z);
-        shipHealthtext.text = "Health: " + health.ToString();
+        shipHealthtext.text = "Ship Health: " + health.ToString();
     }
 
     public void TakeDamage(int damage)
